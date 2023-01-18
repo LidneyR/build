@@ -165,22 +165,12 @@ data = [{
             }]
         
         },{ 
-            id:'2',
-            name:'Lanches',
-            products:[{
-                id:'112',
-                name:'Hot Dog', 
-                img:'assets/images/produtos/hotdog.png',  
-                price:20,
-                quantidade:0, 
-            }]
-       
-        
-        },{ 
             id:'3',
             name:'Pastéis',
             products:[{
                 id:'90',
+                categoria:'pasteis',
+                
                 name:'Pastel Carne ', 
                 
                 img:'assets/images/produtos/pastelcarne.png',   
@@ -189,6 +179,8 @@ data = [{
 
             },{
                 id:'91',
+                categoria:'pasteis',
+                
                 name:'Pastel Queijo', 
                 img:'assets/images/produtos/pastelqueijo.png',  
 
@@ -196,6 +188,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'92',
+                categoria:'pasteis',
+                
                 name:'Pastel Bauru', 
                 img:'assets/images/produtos/pastelbauru.png',  
 
@@ -203,6 +197,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'93',
+                categoria:'pasteis',
+                
                 name:'Pastel Calabresa', 
                 img:'assets/images/produtos/pastelcalabresa.png',  
 
@@ -210,6 +206,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'94',
+                categoria:'pasteis',
+                
                 name:'Pastel Frango', 
                 img:'assets/images/produtos/pastelfrango.png',  
 
@@ -217,6 +215,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'95',
+                categoria:'pasteis',
+                
                 name:'Pastel Pizza', 
                 img:'assets/images/produtos/pastelpizza.png',  
 
@@ -224,6 +224,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'96',
+                categoria:'pasteis',
+                
                 name:'Pastel Brócolis', 
                 img:'assets/images/produtos/pastelbrocolis.png',  
 
@@ -231,6 +233,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'98',
+                categoria:'pasteis',
+                
                 name:'Pastel Carne com Queijo', 
                 img:'assets/images/produtos/pastelcarnequeijo.png',  
 
@@ -238,6 +242,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'99',
+                categoria:'pasteis',
+                
                 name:'Pastel Brócolis com Queijo', 
                 img:'assets/images/produtos/pastelbrocolisqueijo.png',  
 
@@ -245,6 +251,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'100',
+                categoria:'pasteis',
+                
                 name:'Pastel Frango com Catupiry', 
                 img:'assets/images/produtos/pastelfrangocatupiry.png',  
 
@@ -252,6 +260,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'101',
+                categoria:'pasteis',
+                
                 name:'Pastel Palmito', 
                 img:'assets/images/produtos/pastelpalmito.png',  
 
@@ -259,6 +269,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'102',
+                categoria:'pasteis',
+                
                 name:'Pastel Camarão', 
                 img:'assets/images/produtos/pastelcamarao.png',  
 
@@ -272,6 +284,7 @@ data = [{
             name:'Pastéis Doces',
             products:[{
                 id:'103',
+                categoria:'pasteis',
                 name:'Pastel Prestigio', 
                 img:'assets/images/produtos/pastelprestigio.png',  
 
@@ -279,6 +292,7 @@ data = [{
                 quantidade:0,
             },{
                 id:'104',
+                categoria:'pasteis',
                 name:'Pastel Chocolate ou Nutella', 
                 img:'assets/images/produtos/pastelchocolatenutella.png',  
 
@@ -286,6 +300,7 @@ data = [{
                 quantidade:0,
             },{
                 id:'105',
+                categoria:'pasteis',
                 name:'Pastel Chocolate com Banana', 
                 img:'assets/images/produtos/pastelchocolatebanana.png',  
 
@@ -293,6 +308,7 @@ data = [{
                 quantidade:0,
             },{
                 id:'106',
+                categoria:'pasteis',
                 name:'Pastel Chocolate com Morango', 
                 img:'assets/images/produtos/pastelchocolatemorango.png',  
 
@@ -300,6 +316,7 @@ data = [{
                 quantidade:0,
             },{
                 id:'107',
+                categoria:'pasteis',
                 name:'Pastel Leite Condensado c/ Coco', 
                 img:'assets/images/produtos/pastelleitecondensadococo.png',  
 
@@ -307,6 +324,7 @@ data = [{
                 quantidade:0,
             },{
                 id:'108',
+                categoria:'pasteis',
                 name:'Pastel Nutella com Morango', 
                 img:'assets/images/produtos/pastelchocolatemorango.png',  
 
@@ -314,6 +332,7 @@ data = [{
                 quantidade:0,
             },{
                 id:'109',
+                categoria:'pasteis',
                 name:'Pastel Nutella com Banana', 
                 img:'assets/images/produtos/pastelchocolatebanana.png',  
 
@@ -327,6 +346,8 @@ data = [{
             name:'Tapiocas',
             products:[{
                 id:'60',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Carne', 
                 img:'assets/images/produtos/tapiocacarne.png',  
 
@@ -334,6 +355,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'61',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Queijo', 
                 img:'assets/images/produtos/tapiocaqueijo.png',  
 
@@ -341,6 +364,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'62',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Bauru', 
                 img:'assets/images/produtos/tapiocabauru.png',  
 
@@ -348,6 +373,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'63',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Frango', 
                 img:'assets/images/produtos/tapiocafrango.png',  
 
@@ -355,6 +382,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'64',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Pizza', 
                 img:'assets/images/produtos/tapiocapizza.png',  
 
@@ -362,6 +391,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'65',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Brócolis', 
                 img:'assets/images/produtos/tapiocabrocolis.png',  
 
@@ -369,6 +400,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'67',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Carne com Queijo', 
                 img:'assets/images/produtos/tapiocacarnequeijo.png',  
 
@@ -376,6 +409,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'68',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Brócolis com Queijo', 
                 img:'assets/images/produtos/tapiocabrocolisqueijo.png',  
 
@@ -383,6 +418,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'69',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Frango com Queijo', 
                 img:'assets/images/produtos/tapiocafrangoqueijo.png',  
 
@@ -390,6 +427,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'70',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Palmito', 
                 img:'assets/images/produtos/tapiocapalmito.png',  
 
@@ -397,6 +436,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'71',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Camarão', 
                 img:'assets/images/produtos/tapiocacamarao.png',  
 
@@ -409,6 +450,8 @@ data = [{
             name:'Tapiocas Doces',
             products:[{
                 id:'72',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Prestigio', 
                 img:'assets/images/produtos/tapiocaprestigio.png',  
 
@@ -416,36 +459,48 @@ data = [{
                 quantidade:0,
             },{
                 id:'73',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Chocolate ou Nutella', 
                 img:'assets/images/produtos/tapiocachocolatenutella.png',  
                 price:16,
                 quantidade:0,
             },{
                 id:'74',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Chocolate com Banana', 
                 img:'assets/images/produtos/tapiocachocolatebanana.png',  
                 price:17,
                 quantidade:0,
             },{
                 id:'75',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Chocolate com Morango', 
                 img:'assets/images/produtos/tapiocachocolatemorango.png',  
                 price:17,
                 quantidade:0,
             },{
                 id:'76',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Leite Condensado c/ Coco', 
                 img:'assets/images/produtos/tapiocaleitecoco.png',  
                 price:16,
                 quantidade:0,
             },{
                 id:'77',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Nutella com Morango', 
                 img:'assets/images/produtos/tapiocanutellamorango.png',  
                 price:18,
                 quantidade:0,
             },{
                 id:'78',
+                categoria:'tapiocas',
+                
                 name:'Tapioca Nutella com Banana', 
                 img:'assets/images/produtos/tapiocanutellabanana.png',  
                 price:18,
@@ -1212,7 +1267,9 @@ STATUSMESA=false
    + "%0a" // Quebra de linhas
 
 
+  allordersBuy=[]
   prodsSelct=[]
+
 
     data.map((apiData)=>{   
         apiData.itens.map((itensMap)=>{     
@@ -1266,7 +1323,14 @@ STATUSMESA=false
 
      }) 
      
-      
+ 
+     allordersBuy=[{
+
+        idPedido:Math.random() * 1000,
+        itens:prodsSelct
+    }]
+
+ 
 
         document.getElementById("itensTotal").innerHTML+=  itensTotal
         cartContainer.innerHTML+= ` 

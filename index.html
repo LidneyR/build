@@ -23,58 +23,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
- <!-- <script>
-  localStorage.clear();
- </script> -->
+ 
   
   <div id="list"></div>
-       <!-- validation -->
-    <div class="validation" id="validation" style="    background-image: url(assets/images/bg-validation.png) ;    ">
-        <!-- <span class="number">12 99621 - 8661</span>  -->
-        <!-- <div class="devops" style="position: fixed;
-        background: white;
-        width: 100%;
-        height: 100%;
-        z-index: 99999;
-        color: cornflowerblue;
-        text-align: center;
-        font-size: 20px;">ESTAMOS EM FASE DE IMPLEMENTAÇÃO, VOLTE MAIS TARDE ...</div> -->
-        <div class="content">
-            <img src="assets/images/logo.png" alt="">
-            
-        </div>
-      
-        <form action="">
-            <h1>Faça seu pedido sem filas!</h1>
+      <div class="validation" id="validation" style="background-image: url(assets/images/bg-validation.png) ;    ">
+          <div class="content">
+              <img src="assets/images/logo.png" alt="">
+          </div>
+        
+          <form action="">
+              <h1>Faça seu pedido sem filas!</h1>
 
 
-            <img src="assets/images/inputs/user.png" style="width: 16px;">
-            <input  id="userName" style=" height: 40px;margin-bottom: 5px !important;" placeholder="Digite seu nome" type="text" required> 
-                 
-            <div class="select">
-                <img src="assets/images/inputs/archive.png" style="margin-top: 16px;">
-                <select id="selectValidate" required>
-                    <option value="1">Selecione a forma de retirada</option>
-                    <option value="2">Balcão</option>
-                    <option value="3">Mesa</option>
-                </select> 
-            </div>
+              <img src="assets/images/inputs/user.png" style="width: 16px;">
+              <input  id="userName" style=" height: 40px;margin-bottom: 5px !important;" placeholder="Digite seu nome" type="text" required> 
+                  
+              <div class="select">
+                  <img src="assets/images/inputs/archive.png" style="margin-top: 16px;">
+                  <select id="selectValidate" required>
+                      <option value="1">Selecione a forma de retirada</option>
+                      <option value="2">Balcão</option>
+                      <option value="3">Mesa</option>
+                  </select> 
+              </div>
 
-            <button type="submit" onclick="validation(event)" value="submit">Cárdapio
-                <img src="assets/images/inputs/circle.png">
-            </button>
+              <button type="submit" onclick="validation(event)" value="submit">Cárdapio
+                  <img src="assets/images/inputs/circle.png">
+              </button>
 
-            
-            <div class="socialmedia">
-               <h5> Siga nas Redes Sociais</h5>
-                <div class="links">
-                    <a href="https://instagram.com/canoasubatuba?igshid=ZDdkNTZiNTM=" ><img src="assets/images/instagram.png"></a>
-                    <a href="https://www.facebook.com/profile.php?id=100085722654035&mibextid=ZbWKwL" ><img src="assets/images/facebook.png"></a>
-                </div> 
-            </div>
+              
+              <div class="socialmedia">
+                <h5> Siga nas Redes Sociais</h5>
+                  <div class="links">
+                      <a href="https://instagram.com/canoasubatuba?igshid=ZDdkNTZiNTM=" ><img src="assets/images/instagram.png"></a>
+                      <a href="https://www.facebook.com/profile.php?id=100085722654035&mibextid=ZbWKwL" ><img src="assets/images/facebook.png"></a>
+                  </div> 
+              </div>
 
-        </form>     
-    </div>
+          </form>     
+      </div>
     <div class="user" id="user"> 
         
     </div>
@@ -205,7 +192,10 @@
  <script src="assets/js/all.js"></script>
  <script src="assets/components/checkout/checkout.js"></script>
  <script src="assets/components/categorias/categorias.js"></script>
+ 
  <script src="assets/components/api/api-categorias.js"></script>
+ <script src="assets/components/orders/ordermore.js"></script>
+
  <script src="assets/components/search/search.js"></script>
  <script src="assets/js/validation.js"></script>
  <script src="assets/js/cart.js"></script>
@@ -261,32 +251,41 @@
   ]
  }]
  
-
- let form = document.querySelector(".checkoutform")
  let btnSubmit=document.getElementById('submitCheck')
- let list = document.getElementById("notifications")
+ let list = document.getElementById("notifications") 
+ let form = document.querySelector(".checkoutform")
+
  
  form.addEventListener('submit', function(e){
- e.preventDefault()
- console.log(",,") 
- console.log(inpuMVaue)
- console.log(prodsSelct)
+   e.preventDefault() 
 
- 
- db.collection('vendasemcurso').add({ 
- 
-    mesa:inpuMVaue,
-    orders:[{idPedido:Math.random() * 1000,itens:prodsSelct } 
+    // db.collection('vendasemcurso').add({  
+    //     mesa:inpuMVaue,
+    //     orders:[{idPedido:Math.random() * 1000,itens:prodsSelct }   
+    // ]}) 
   
-  
-  ]
- 
+    const mesaString=getminhamesa.toString()
+    db.collection('mesasOpen').doc(mesaString).set({  
+        mesa:inpuMVaue,
+        orders:allordersBuy
 
-  
-  })
+    //     orders:[{idPedido:Math.random() * 1000,itens:prodsSelct }   
+    // ]}) 
+      }) 
 
- form.reset()
+      // db.collection('vendasemcurso').doc('MNkyuFwbzYqGOpSfPbtU').set({  
+      //     mesa:inpuMVaue,
+      //     orders:[{idPedido:Math.random() * 1000,itens:prodsSelct,
+      //     teste:true
+          
+      //     }   
+      // ]}) 
 
+      prodsSelct=[]
+        
+
+    form.reset()
+      alert('Pedido Enviado ao Restaurante')
  })
  
 

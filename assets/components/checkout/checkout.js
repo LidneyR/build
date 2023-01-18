@@ -70,10 +70,10 @@ window.onload=()=>{
 
   
    if(localStorage.getItem("minhamesa")){
-    getminhamesa=JSON.parse(localStorage.getItem("minhamesa"))
-    console.log(getminhamesa)
+    
+    getminhamesa=JSON.parse(localStorage.getItem("minhamesa"))  
     itensTotal.innerHTML+=`<div class='flagMesa'>Mesa`+getminhamesa+` </div>`;
-    console.log(inpuMMesa)
+ 
 
     inpuMMesa.value=getminhamesa
     inpuMMesa.setAttribute("disabled","")
