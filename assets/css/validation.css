@@ -56,8 +56,8 @@
 .validation form {
     width: 85%;
     margin: 70px auto;
-    position: relative;
-    top: 25%;
+    position: relative; 
+   
 }
 form img {
     margin-top: 15px;
