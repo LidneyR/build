@@ -357,16 +357,11 @@
         }, 2000);
 
       }else{
-        db.collection('delivery').doc(inputUserName).set({  
-          "name":inputUserName,
-          "orders":[{
-                id:'180',
-                categoria:'porcoes', 
-                name:'Porção Camarão Rosa Dorê', 
-                price:130, 
-                img:'assets/images/produtos/camaraorosadore.png',
-                quantidade:0,
-            }] //<==================Pedidos RecebidosS
+
+        let userNameString=inputUserName.toLowerCase().replace(/\s/g, '+');
+        db.collection('delivery').doc(userNameString).set({  
+          "name":userNameString,
+           orders:allordersBuy  //<==================Pedidos Recebidos
         }) 
 
         alert('Pedido Enviado ao Restaurante')  
