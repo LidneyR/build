@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <button id="deleteOrder">Delete Order</button>
+  <!-- <button id="deleteOrder">Delete Order</button>  -->
  
   
   <div id="list"></div>
@@ -33,14 +33,27 @@
           </div>
         
           <form action="">
-              <h1>Faça seu pedido sem filas!</h1>
+              <h1>Faça seu pedido sem filas!</h1> 
 
+              <div class="mylabel">
+                <label style="
+                top: -3px;
+                height: 48px;
+                bottom: 0;
+            ">  <img src="assets/images/inputs/user.png" style="width: 16px;">
+                </label>
+                <input id="userName" style="margin-bottom: 5px !important;" placeholder="Digite seu nome" type="text" required> 
 
-              <img src="assets/images/inputs/user.png" style="width: 16px;">
-              <input  id="userName" style=" height: 40px;margin-bottom: 5px !important;" placeholder="Digite seu nome" type="text" required> 
+              </div>
                   
-              <div class="select">
+              <div class="select mylabel">
+                <label style="
+                bottom: 0px;
+                height: 46px;
+                width: 40px;  ">  
                   <img src="assets/images/inputs/archive.png" style="margin-top: 16px;">
+
+                </label>
                   <select id="selectValidate" required>
                       <option value="1">Selecione a forma de retirada</option>
                       <option value="2">Delivery</option>
@@ -72,37 +85,49 @@
         <button onclick="closeCheckout()"><svg class="svg-inline--fa fa-chevron-left" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 278.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"></path></svg><!-- <i class="fa-solid fa-chevron-left"></i> Font Awesome fontawesome.com --></button>
         <button onclick="closeCheckout()"><svg class="svg-inline--fa fa-xmark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"></path></svg><!-- <i class="fa-solid fa-xmark"></i> Font Awesome fontawesome.com --></button>  
     </div>
-<div class="content"><h2>Finalizar Pedido </h2> </div>
+    <div class="content"><h2>Finalizar Pedido </h2> </div>
 
 
 <form id="checkoutform" class="checkoutform" >
         <div>
-            <label>
+
+            <label style="
+            width: 100%;
+            height: auto;
+        ">
             Forma de retirada:
-            </label>
-            
+            </label> 
 
-            <div class="select">
-            <img src="assets/images/inputs/archive.png" style="margin-top: 16px;">
+            <div class="mylabel select">
 
-                <select onchange="formaRetirada()" id="selectCheckout"> 
+                  <label>
+                    <img src="assets/images/inputs/archive.png" style="margin-top: 16px;">
+                  </label>
 
-                    <option value="1">Selecione a forma de retirada</option>
-                    <option value="balcao">Delivery</option>
-                    <option value="mesa">Mesa</option>
-                </select>
+                  <select onchange="formaRetirada()" id="selectCheckout">  
+                      <option value="1">Selecione a forma de retirada</option>
+                      <option value="balcao">Delivery</option>
+                      <option value="mesa">Mesa</option>
+                  </select>
+
             </div>
-            <div id="setMesa" class="select"  style="display:none">
-            <img src="assets/images/inputs/mesa.png" style="margin-top: 16px;">
 
-            <input id="inputMesa"  type="number" placeholder="Digite o numero da mesa">
-        </div>
+            <div id="setMesa" class="mylabel"  style="display:none">
+              <label style="
+              height: 48px;
+          "> 
+                <img src="assets/images/inputs/mesa.png" style="margin-top: 16px;">  
+              </label>
+
+              <input id="inputMesa"  type="number" placeholder="Digite o numero da mesa">
+            </div>
+
         </div>
         <div style="position: relative;">
             <label> 
                 Observações do Pedido:
             </label>
-            <img src="assets/images/inputs/chat.png" style="margin-top: 38px;">
+           
 
             <textarea id="areaObs" placeholder="Digite observações do seu pedido"></textarea>
             
@@ -111,10 +136,10 @@
         
 
         <div class="total" id="totalfinesh"> 
-        Total da compra
-            R$&nbsp;150,00 
+  
             <button type="submit" id="submitCheck">ENVIAR MEU PEDIDO </button></div> 
 
+       </div>
                           
 
 </form>
@@ -135,21 +160,38 @@
     <div class="search">
         <h2>O que deseja pedir hoje?</h2> 
         <form>
-            <img src="assets/images/search.png" alt="">
-            <input  onclick="getSearch(event)" type="text" placeholder="Buscar itens...">
-            <i class="fa-solid fa-arrow-right"></i>
+<!--           
+          <div class="mylabel">
+            <label>  <img src="assets/images/inputs/user.png" style="width: 16px;">
+            </label>
+            <input id="userName" style="margin-bottom: 5px !important;" placeholder="Digite seu nome" type="text" required> 
+          </div> -->
 
+          <div class="mylabel"> 
+            <label style="
+            top: 0px;
+            height: 46px;
+            ">  
+              <img src="assets/images/search.png" alt="">
+            </label>
+          
+
+            <input  onclick="getSearch(event)" type="text" placeholder="Buscar itens...">
+            <!-- <i class="fa-solid fa-arrow-right"></i> -->
+          </div>
             <div id="contentSearch" class="contentSearch"> 
               <!-- CONTROLES -->
               <div class="controls"> 
                 <button onclick="getSearch(event)"><svg class="svg-inline--fa fa-chevron-left" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 278.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"></path></svg><!-- <i class="fa-solid fa-chevron-left"></i> Font Awesome fontawesome.com --></button>
                 <button onclick="getSearch(event)"><svg class="svg-inline--fa fa-xmark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"></path></svg><!-- <i class="fa-solid fa-xmark"></i> Font Awesome fontawesome.com --></button>  
               </div>
-              <div style="position: inherit;
-                  width: 100%;
-                  margin-top: 50px;
-                  margin-bottom: 10px;"> 
-                <img src="assets/images/search.png" alt="">
+            
+            
+            <div class="mylabel" style="position: inherit;width: 100%;margin-top: 50px;margin-bottom: 10px;margin-left: 10px;"> 
+                <label>
+                 <img src="assets/images/search.png" alt=""> 
+                </label>
+
                 <input id="serchInput" type="text" placeholder="Buscar itens..."> 
                 
               </div>
@@ -159,7 +201,7 @@
         </form>
         <div id="searchResult"></div>
      </div>
-     <div class="banners">
+     <div style="display:none;" class="banners">
      <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -258,8 +300,7 @@
 
  //READ
     const ordersLab=db.collection('mesasOpen') 
-    ordersLab.onSnapshot((snapshot) => { 
-      
+    ordersLab.onSnapshot((snapshot) => {  
         snapshot.forEach((doc) => { 
             database.push(doc.data())
         }); 
@@ -274,68 +315,74 @@
  form.addEventListener('submit', function(e){
    e.preventDefault()  
 
-        console.log(database)
+      if(inpuMVaue!=0){
 
 
         database.map((baseMap)=>{
-          if(baseMap.mesa==inpuMVaue){
-
-                console.log(baseMap) //MESA ESCOLHIDDA PELO USUÁRIO
-
-                baseMap.orders.map((mapOrders)=>{
-                    console.log("COMPRAS REALIZADAS") //COMPRAS REALIZADAS
-                    console.log(mapOrders) //COMPRAS REALIZADAS
-                    console.log("COMPRA atual") //COMPRAS atual
-
-                    // console.log(allordersBuy) 
-
-
-                    allordersBuy.map((atualMap)=>{
-
-                      
+          if(baseMap.mesa==inpuMVaue){ //VERIFICA EXISTENCIA
  
-                    let teste=[mapOrders,atualMap]
-                      console.log(teste)
-                      allordersBuy=teste
-                      
-                    })
-
+                console.log("compras passadas")
+                console.log(baseMap.orders) 
+                baseMap.orders.map((mapOrders)=>{ 
+                  recebePedidos.push(mapOrders)  
                 })
-
-
-                console.log("dado traTADO")
-
-
-
-
+  
           }
 
         })
       
+        console.log("Compra atual")
+        console.log(allordersBuy)
+
+        allordersBuy.map((atualOrderMap)=>{
+          recebePedidos.push(atualOrderMap)
+        })
+
+
+
+        console.log("Pedidos Recebidos")
+        console.log(recebePedidos)
 
         db.collection('mesasOpen').doc(inpuMVaue).set({  
           mesa:inpuMVaue,
-          orders:allordersBuy  //<==================
+          orders:recebePedidos  //<==================Pedidos Recebidos
         }) 
  
         prodsSelct=[]  
         form.reset()
         alert('Pedido Enviado ao Restaurante')  
 
+
+      }else{
+        db.collection('delivery').doc('Vinicius').set({  
+          "nome":"Vinicius",
+          "orders":[{
+                id:'180',
+                categoria:'porcoes', 
+                name:'Porção Camarão Rosa Dorê', 
+                price:130, 
+                img:'assets/images/produtos/camaraorosadore.png',
+                quantidade:0,
+            }] //<==================Pedidos RecebidosS
+        }) 
+      }
+        
+
+
   
  })
  
 
  //DELETE
- var btnDel=document.getElementById('deleteOrder')
+//  var btnDel=document.getElementById('deleteOrder')
  
- btnDel.addEventListener('click',function(e){
-  db.collection("mesasOpen").doc("10s").delete().then(() => {
-    console.log("Document successfully deleted!");
-}).catch((error) => {
-    console.error("Error removing document: ", error);
-});
- })
+//  btnDel.addEventListener('click',function(e){
+//   db.collection("mesasOpen").doc("10s").delete().then(() => {
+//     console.log("Document successfully deleted!");
+// }).catch((error) => {
+//     console.error("Error removing document: ", error);
+// });
+//  })
  </script>
 
     

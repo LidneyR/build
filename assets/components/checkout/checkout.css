@@ -8,8 +8,13 @@ div#checkout {
     top:0;
     padding: 60px 0;
 }
-div#checkout select, div#checkout textarea,input[type="number"] {
+div#checkout select,input[type="number"] {
     border: 1px solid #73859E;
+    border-left: 0px;
+}
+div#checkout textarea {
+    border: 1px solid #73859E;
+ 
 }
 textarea {
     width: 100%;
@@ -55,6 +60,9 @@ label {
     color: #73859E;
     font-size: 15px;
     font-weight: 300;
+    top:0;
+    bottom:0;
+    height: 46px;
 }
 div#checkout form {
     width: 80%;
@@ -65,4 +73,10 @@ div#checkout form div {
 }
 div#checkout .select {
     position: relative;
+}
+
+form#checkoutform .mylabel label {
+    border: 1px solid;
+    border-right: 0;
+       height: 44px;
 }

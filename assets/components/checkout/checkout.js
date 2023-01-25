@@ -20,7 +20,7 @@ getCheckout=()=>{
 
     // VALIDA CAMPO CHECKOUT 
     if(optionsCheck=="Mesa"){ 
-        mesaCheck.parentNode.style.cssText="display:block"
+        mesaCheck.parentNode.style.cssText="display:flex"
 
     }
     containerCheckout.style.cssText="display:block"
@@ -33,7 +33,7 @@ formaRetirada=()=>{
     setMesa=document.getElementById('setMesa') 
 
     if(retiradavalue=='mesa'){
-        setMesa.style.cssText="display:block"   
+        setMesa.style.cssText="display:flex"   
     }else if(retiradavalue=='balcao'){
         setMesa.style.cssText="display:none"  
         inpuMVaue=0
@@ -62,7 +62,7 @@ formaRetirada=()=>{
 
 window.onload=()=>{
 
-
+    recebePedidos=[]
 
 
     

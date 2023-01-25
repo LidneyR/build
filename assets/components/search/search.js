@@ -22,8 +22,8 @@ getSearch=(event)=>{
             // searchResult.innerHTML="" 
 
             // }
-            console.log(productFound.length )
-            searched.length > 3 ?  render(productFound) :  searchResult.innerHTML="Produto não encontrado"
+          
+            searched.length > 3 ?  render(productFound) :  searchResult.innerHTML="<div>Produto não encontrado</div>"
 
         
       }
@@ -46,14 +46,13 @@ getSearch=(event)=>{
     }
 
     serchInput.addEventListener('keyup', _.debounce(submitSearch, 500))
-    // serchInput.addEventListener('keydown', _.debounce(clean, 500))
-     
+ 
 
     function render(productFound){   
         
 
         productFound.map((prodFoundMap)=>{  
-            // console.log(prodFoundMap.name)
+        
 
             searchResult.innerHTML+=`
              
@@ -77,7 +76,7 @@ getSearch=(event)=>{
             `;  
         }) 
      }
-     console.log(containerSearch)
+    
 
   
    

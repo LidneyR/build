@@ -1,15 +1,14 @@
 input,select {
+    color: #73859E;
+    font-family: 'Lexend Deca', sans-serif;
+
+    
     position: relative;
     width: 100%;
     border: 0;
-    border-radius: 40px;
+    border-radius: 0 40px 40px 0;
     box-shadow: none;
-    height: 42px;
-    margin: 2px 0;
-    /* padding: 0 1em; */
-    /* padding-left: 36px; */
-    color: #73859E;
-    font-family: 'Lexend Deca', sans-serif;
+    height: 50px;   
     font-size: 12px;
     font-weight: 300;
     cursor: pointer;
@@ -21,7 +20,7 @@ select {
     outline: 0;
     flex: 1;
     background-image: none;
-    padding-left: 36px;
+ 
    }
 
 input:focus-visible {
@@ -38,8 +37,21 @@ input::placeholder  {
     opacity: 1;
     font-weight: 300;
     font-family: 'Lexend Deca', sans-serif; 
-    padding-left: 36px; 
+  
    
 }
-
- 
+.mylabel{
+    display: flex; align-items: center; 
+    width: 100%;
+}
+label{ 
+                display: flex;
+                background: white;
+                width: 45px;
+                height: 48px;
+                border-radius: 40px 0 0 40px;
+                margin: 0;
+                padding: 2px;
+                position: relative;
+                bottom: 3px;
+            }
