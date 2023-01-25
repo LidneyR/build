@@ -39,7 +39,7 @@ h2 {
     width: 100%;
 }
 @media(min-width:600px){
-    .swiper{
+    .banners{
         display: none;
     }
 }
