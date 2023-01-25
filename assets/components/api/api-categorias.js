@@ -1083,6 +1083,9 @@ data = [{
 
 
 ]
+ 
+database=[]
+
 var apiContainer=document.getElementById('api') 
 var categoriesContainer=document.getElementById('categories') 
 STATUSMESA=false
@@ -1208,7 +1211,7 @@ STATUSMESA=false
 
     
  addProd=(ProdThis, inputProd)=>{ 
-    event.preventDefault
+     
     var key=ProdThis.getAttribute('key')
      
       input=document.getElementById(inputProd)
@@ -1269,68 +1272,91 @@ STATUSMESA=false
 
   allordersBuy=[]
   prodsSelct=[]
+ 
 
 
-    data.map((apiData)=>{   
-        apiData.itens.map((itensMap)=>{     
-             itensMap.products.map((productsMap)=>{ 
-               
-  
-              if(productsMap.quantidade>0){
-                cartQtd+=productsMap.quantidade
-                itensTotal+=productsMap.quantidade
-                prodMultiply=productsMap.price*productsMap.quantidade
-                totalCart+=prodMultiply
-                list+=productsMap.name 
-                prodsSelct.push(productsMap)
-                //  console.log(prodsSelct)
-
-               
-         
-                cartPreview.innerHTML= `    <div >     <button id="cartPreview" onclick="showCart()"><img src="assets/images/shopping-cart.png" alt=""></button> <span class="qtdIcon">`+cartQtd +` </span>   </div>  `;  
-                cartContainer.innerHTML+= `  
+        data.map((apiData)=>{   
+            apiData.itens.map((itensMap)=>{     
+                itensMap.products.map((productsMap)=>{ 
                 
-                <div class="produto">
-                                <img src="`+productsMap.img +`" alt="">
-                            <div class="prod-val">
-                                <h3 class="title-prod"> `+productsMap.name +` </h3> 
-                                <span class="valor">`+prodMultiply.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) +` </span>
-                            </div>
-                            <div class="quantidade">
-                                     <button key="`+productsMap.id +`" onclick="addProd(this,`+productsMap.id +`); ">+</button>
-                                <input  id="`+productsMap.id +`Cart" value="`+productsMap.quantidade +`" type="text" placeholder="0">
-                                <button key="`+productsMap.id +`" onclick="removeProd(this,`+productsMap.id +`); ">-</button>
-              
-                            </div>
-                            <button><img src="assets/images/trash.png" style="width: 20px; height: 21px;"></button>
+    
+                if(productsMap.quantidade>0){
+                    cartQtd+=productsMap.quantidade
+                    itensTotal+=productsMap.quantidade
+                    prodMultiply=productsMap.price*productsMap.quantidade
+                    totalCart+=prodMultiply
+                    list+=productsMap.name 
+                    prodsSelct.push(productsMap)
+                    //  console.log(prodsSelct)
 
-                        </div>
-                        
-                `;  
-                // msg+=``+productsMap.quantidade +`,`+productsMap.name +`,`+prodMultiply.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) +`` 
-              
-                url+=""+productsMap.quantidade+"un. / *"+productsMap.name+"* / " + prodMultiply.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
-                +"%0a" // Dados do formulário
-
-
-             }
+                
             
-             
-             }) 
+                    cartPreview.innerHTML= `    <div >     <button id="cartPreview" onclick="showCart()"><img src="assets/images/shopping-cart.png" alt=""></button> <span class="qtdIcon">`+cartQtd +` </span>   </div>  `;  
+                    cartContainer.innerHTML+= `  
+                    
+                    <div class="produto">
+                                    <img src="`+productsMap.img +`" alt="">
+                                <div class="prod-val">
+                                    <h3 class="title-prod"> `+productsMap.name +` </h3> 
+                                    <span class="valor">`+prodMultiply.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) +` </span>
+                                </div>
+                                <div class="quantidade">
+                                        <button key="`+productsMap.id +`" onclick="addProd(this,`+productsMap.id +`); ">+</button>
+                                    <input  id="`+productsMap.id +`Cart" value="`+productsMap.quantidade +`" type="text" placeholder="0">
+                                    <button key="`+productsMap.id +`" onclick="removeProd(this,`+productsMap.id +`); ">-</button>
+                
+                                </div>
+                                <button><img src="assets/images/trash.png" style="width: 20px; height: 21px;"></button>
 
-            
+                            </div>
+                            
+                    `;  
+                    // msg+=``+productsMap.quantidade +`,`+productsMap.name +`,`+prodMultiply.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) +`` 
+                
+                    url+=""+productsMap.quantidade+"un. / *"+productsMap.name+"* / " + prodMultiply.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+                    +"%0a" // Dados do formulário
+
+
+                }
+                
+                
+                }) 
+
+                
+            }) 
+
         }) 
-
-     }) 
      
+         
  
-     allordersBuy=[{
+       
+        if(1==0){  
+            // if(database.length>0){ 
 
-        idPedido:Math.random() * 1000,
-        itens:prodsSelct
-    }]
+            console.log('2 compra') 
+            lastOrderDoc=JSON.parse(localStorage.getItem("last"))
+            
+    
+            lastOrderDoc.map((dataMap)=>{
+                laslastorder=dataMap
+            
+            })
+            
+            atualOrder=[laslastorder,{ 
+                idPedido:Math.random() * 1000,
+                itens:prodsSelct
+            }]
 
- 
+
+            allordersBuy=atualOrder
+     
+    
+        }else{ 
+            allordersBuy=[{ 
+                idPedido:Math.floor(Math.random() * 1000).toString(),
+                itens:prodsSelct
+            }]
+        }
 
         document.getElementById("itensTotal").innerHTML+=  itensTotal
         cartContainer.innerHTML+= ` 
@@ -1348,40 +1374,40 @@ STATUSMESA=false
   }
 
 
-    sendOrder=(event)=>{
-        event.preventDefault() 
-    
-        mesaCheck=document.getElementById('selectMesaCheckout').value
+sendOrder=(event)=>{
+    event.preventDefault() 
 
-      if(retiradavalue=='mesa'){
-              
-            retirada=retiradavalue+" N* "+mesaCheck
-            send()
-        }else if(retiradavalue=='balcao'){
-           
-            retirada=retiradavalue 
-            send()
-        }else{
-            alert('Preencha os Campos')
+    mesaCheck=document.getElementById('selectMesaCheckout').value
 
-        }
+    if(retiradavalue=='mesa'){
+            
+        retirada=retiradavalue+" N* "+mesaCheck
+        send()
+    }else if(retiradavalue=='balcao'){
+        
+        retirada=retiradavalue 
+        send()
+    }else{
+        alert('Preencha os Campos')
 
-        function send(){
-            comments=document.getElementById("areaObs").value
-            url+=""
-            + "*Forma de Retirada*: " + retirada+ "%0a" // Dados do formulário
-            +"%0a" 
-            + "*Observações do Pedido*"
-            + "%0a" // Quebra de linhas 
-            +comments
-    
-            location.href = url
-        }
     }
 
-    closeCheckout=()=>{ 
-        containerCheckout.classList.toggle("hide");
+    function send(){
+        comments=document.getElementById("areaObs").value
+        url+=""
+        + "*Forma de Retirada*: " + retirada+ "%0a" // Dados do formulário
+        +"%0a" 
+        + "*Observações do Pedido*"
+        + "%0a" // Quebra de linhas 
+        +comments
+
+        location.href = url
     }
+}
+
+closeCheckout=()=>{ 
+    containerCheckout.classList.toggle("hide");
+}
 
 
 

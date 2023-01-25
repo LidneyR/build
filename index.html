@@ -23,6 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
+  <button id="deleteOrder">Delete Order</button>
  
   
   <div id="list"></div>
@@ -87,7 +88,7 @@
                 <select onchange="formaRetirada()" id="selectCheckout"> 
 
                     <option value="1">Selecione a forma de retirada</option>
-                    <option value="balcao">Balcão</option>
+                    <option value="balcao">Delivery</option>
                     <option value="mesa">Mesa</option>
                 </select>
             </div>
@@ -183,7 +184,6 @@
     <div id="categories" class="categories"> </div>
     
     
- 
     
   
     </html>
@@ -225,7 +225,7 @@
  // Initialize Cloud Firestore and get a reference to the service
  const db = firebase.firestore();
 
-// PROTOTIPO DE DADOS
+// PROTOTIPO DE DADOS...
  const dadosEstrutura=[{
     mesa:"20",
     orders:[{
@@ -255,40 +255,87 @@
  let list = document.getElementById("notifications") 
  let form = document.querySelector(".checkoutform")
 
- 
+
+ //READ
+    const ordersLab=db.collection('mesasOpen') 
+    ordersLab.onSnapshot((snapshot) => { 
+      
+        snapshot.forEach((doc) => { 
+            database.push(doc.data())
+        }); 
+    }, (error) => {
+        // ...
+    });
+
+
+
+
+ //UPDATE
  form.addEventListener('submit', function(e){
-   e.preventDefault() 
+   e.preventDefault()  
 
-    // db.collection('vendasemcurso').add({  
-    //     mesa:inpuMVaue,
-    //     orders:[{idPedido:Math.random() * 1000,itens:prodsSelct }   
-    // ]}) 
+        console.log(database)
+
+
+        database.map((baseMap)=>{
+          if(baseMap.mesa==inpuMVaue){
+
+                console.log(baseMap) //MESA ESCOLHIDDA PELO USUÁRIO
+
+                baseMap.orders.map((mapOrders)=>{
+                    console.log("COMPRAS REALIZADAS") //COMPRAS REALIZADAS
+                    console.log(mapOrders) //COMPRAS REALIZADAS
+                    console.log("COMPRA atual") //COMPRAS atual
+
+                    // console.log(allordersBuy) 
+
+
+                    allordersBuy.map((atualMap)=>{
+
+                      
+ 
+                    let teste=[mapOrders,atualMap]
+                      console.log(teste)
+                      allordersBuy=teste
+                      
+                    })
+
+                })
+
+
+                console.log("dado traTADO")
+
+
+
+
+          }
+
+        })
+      
+
+        db.collection('mesasOpen').doc(inpuMVaue).set({  
+          mesa:inpuMVaue,
+          orders:allordersBuy  //<==================
+        }) 
+ 
+        prodsSelct=[]  
+        form.reset()
+        alert('Pedido Enviado ao Restaurante')  
+
   
-    const mesaString=getminhamesa.toString()
-    db.collection('mesasOpen').doc(mesaString).set({  
-        mesa:inpuMVaue,
-        orders:allordersBuy
-
-    //     orders:[{idPedido:Math.random() * 1000,itens:prodsSelct }   
-    // ]}) 
-      }) 
-
-      // db.collection('vendasemcurso').doc('MNkyuFwbzYqGOpSfPbtU').set({  
-      //     mesa:inpuMVaue,
-      //     orders:[{idPedido:Math.random() * 1000,itens:prodsSelct,
-      //     teste:true
-          
-      //     }   
-      // ]}) 
-
-      prodsSelct=[]
-        
-
-    form.reset()
-      alert('Pedido Enviado ao Restaurante')
  })
  
 
+ //DELETE
+ var btnDel=document.getElementById('deleteOrder')
+ 
+ btnDel.addEventListener('click',function(e){
+  db.collection("mesasOpen").doc("10s").delete().then(() => {
+    console.log("Document successfully deleted!");
+}).catch((error) => {
+    console.error("Error removing document: ", error);
+});
+ })
  </script>
 
     

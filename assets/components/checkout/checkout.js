@@ -33,33 +33,27 @@ formaRetirada=()=>{
     setMesa=document.getElementById('setMesa') 
 
     if(retiradavalue=='mesa'){
-        setMesa.style.cssText="display:block"  
-
-        if(localStorage.getItem("minhamesa")){
-           
-                alert('Continue comprando para mesa '+getminhamesa+', ainda está aberta!')
-            
-            
-        }
-        
+        setMesa.style.cssText="display:block"   
     }else if(retiradavalue=='balcao'){
-        setMesa.style.cssText="display:none" 
+        setMesa.style.cssText="display:none"  
+        inpuMVaue=0
     }
 
     //Mesa Digitada
     setMesa.addEventListener('focusout', function(e){
-
-        inpuMVaue=document.getElementById('inputMesa').value
-        setminhamesa=localStorage.setItem("minhamesa",inpuMVaue);
-        getminhamesa=JSON.parse(localStorage.getItem("minhamesa"))
+  
+        inpuMVaue=document.getElementById('inputMesa').value.toString()
+        // setminhamesa=localStorage.setItem("minhamesa",inpuMVaue);
+        // getminhamesa=JSON.parse(localStorage.getItem("minhamesa"))
               
-        if(STATUSMESA==false){
+        // if(STATUSMESA==false){
             
-            STATUSMESA=true
-            console.log(getminhamesa)
-            itensTotal.innerHTML+=`<div class='flagMesa'>`+getminhamesa+` </div>`;
-            inpuMVaue.value=getminhamesa
-        }   
+        //     STATUSMESA=true 
+        //     itensTotal.innerHTML+=`<div class='flagMesa'>`+getminhamesa+` </div>`;
+   
+        // }   
+       
+
           
     })
 
@@ -68,16 +62,10 @@ formaRetirada=()=>{
 
 window.onload=()=>{
 
-  
-   if(localStorage.getItem("minhamesa")){
-    
-    getminhamesa=JSON.parse(localStorage.getItem("minhamesa"))  
-    itensTotal.innerHTML+=`<div class='flagMesa'>Mesa`+getminhamesa+` </div>`;
- 
 
-    inpuMMesa.value=getminhamesa
-    inpuMMesa.setAttribute("disabled","")
-    inpuMVaue=getminhamesa
-   }
+
+
+    
+   
  
 }
