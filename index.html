@@ -351,11 +351,14 @@
         prodsSelct=[]  
         form.reset()
         alert('Pedido Enviado ao Restaurante')  
-
+        
+        setTimeout(function(){
+            location.reload()
+        }, 2000);
 
       }else{
-        db.collection('delivery').doc('Vinicius').set({  
-          "nome":"Vinicius",
+        db.collection('delivery').doc(inputUserName).set({  
+          "name":inputUserName,
           "orders":[{
                 id:'180',
                 categoria:'porcoes', 
@@ -365,6 +368,14 @@
                 quantidade:0,
             }] //<==================Pedidos RecebidosS
         }) 
+
+        alert('Pedido Enviado ao Restaurante')  
+        form.reset()
+
+        setTimeout(function(){
+            location.reload()
+        }, 2000);
+
       }
         
 
