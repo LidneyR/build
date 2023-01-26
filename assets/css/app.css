@@ -3,6 +3,9 @@ body {
     background-color: #FB6E3B;
     margin: 0px;
     overflow: hidden;
+    max-width: 800px;
+ 
+    margin: 0 auto;
 }
 
 button {
