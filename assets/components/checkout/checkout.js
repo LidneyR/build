@@ -61,7 +61,9 @@ formaRetirada=()=>{
 
 
 window.onload=()=>{
-
+    
+    databaseMesas=[] 
+    databaseDelivery=[] 
     recebePedidos=[]
 
 

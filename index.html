@@ -305,19 +305,6 @@
  let form = document.querySelector(".checkoutform")
 
 
- //READ
-    const ordersLab=db.collection('mesasOpen') 
-    ordersLab.onSnapshot((snapshot) => {  
-        snapshot.forEach((doc) => { 
-            database.push(doc.data())
-        }); 
-    }, (error) => {
-        // ...
-    });
-
-
-
-
  //UPDATE
  form.addEventListener('submit', function(e){
    e.preventDefault()  
@@ -365,33 +352,110 @@
 
       }else if(inpuMWhats!="") {
         
-        console.log(inpuMWhats)
  
-        let userNameString=inputUserName.toLowerCase().replace(/\s/g, '+');
-        db.collection('delivery').doc(userNameString).set({  
-          "name":userNameString,
-           "whatsapp":inpuMWhats,
-           orders:allordersBuy  //<==================Pedidos Recebidos
-        }) 
+        console.log(databaseDelivery.length>0)
 
-        alert('Pedido Enviado ao Restaurante, acompanhe a notificação no seu whatsapp')  
-        form.reset()
+        if(databaseDelivery.length>0){
 
-        setTimeout(function(){
-            // location.reload()
-        }, 2000);
+             databaseDelivery.map((mapDataDelivery)=>{
+                  
+                  let validaName=mapDataDelivery.name===inputUserName.toLowerCase()
 
-      }else{
-        alert('Preecha o campo com seu Whatsapp valido.')
+
+                      if(validaName==true){
+                        console.log('Segunda Compra')
+                    
+
+                          mapDataDelivery.orders.map((mapOrdersDelv)=>{ 
+                            recebePedidos.push(mapOrdersDelv) 
+                          })
+                          
+                          allordersBuy.map((atualOrderMap)=>{
+                              recebePedidos.push(atualOrderMap)
+                          })
+
+
+                          let userNameString=inputUserName.toLowerCase().replace(/\s/g, '+');
+                          db.collection('delivery').doc(userNameString).set({  
+                            "name":userNameString,
+                            "whatsapp":inpuMWhats,
+                            orders:recebePedidos  //<==================Pedidos Recebidos
+
+                        
+                          }) 
+
+                          console.log({"name":userNameString,
+                            "whatsapp":inpuMWhats,
+                            orders:recebePedidos  //<==================Pedidos Recebidos
+
+                    
+
+                          })
+
+                      }else{
+                         
+
+                      } 
+
+                  })
+
+        }else{
+            console.log("novo") 
+
+            console.log('Primeira Compra')
+              let userNameString=inputUserName.toLowerCase().replace(/\s/g, '+');
+              db.collection('delivery').doc(userNameString).set({  
+                "name":userNameString,
+                "whatsapp":inpuMWhats,
+                orders:allordersBuy  //<==================Pedidos Recebidos
+              }) 
+
+              console.log({  
+                "name":userNameString,
+                "whatsapp":inpuMWhats,
+                orders:allordersBuy  //<==================Pedidos Recebidos
+              })
+
+              form.reset()
+              alert('Pedido Enviado ao Restaurante')  
+              
+              setTimeout(function(){
+                  location.reload()
+              }, 2000);
+
+        }
+   
+
+  
+      
+
       } 
-        
-
 
   
  })
  
 
  
+ //READ MESAS
+    const ordersLab=db.collection('mesasOpen') 
+    ordersLab.onSnapshot((snapshot) => {  
+        snapshot.forEach((doc) => { 
+          databaseMesas.push(doc.data())
+        }); 
+    }, (error) => {
+        // ...
+    });
+
+ //READ DELIVERYS 
+    const ordersLabDelivery=db.collection('delivery') 
+    ordersLabDelivery.onSnapshot((snapshot) => {  
+        snapshot.forEach((doc) => { 
+          databaseDelivery.push(doc.data())
+        }); 
+    }, (error) => {
+        // ...
+    });
+
  </script>
 
     
