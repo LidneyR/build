@@ -113,15 +113,22 @@
             </div>
 
             <div id="setMesa" class="mylabel"  style="display:none">
-              <label style="
-              height: 48px;
-          "> 
+              <label style="height:48px;"> 
                 <img src="assets/images/inputs/mesa.png" style="margin-top: 16px;">  
               </label>
-
               <input id="inputMesa"  type="number" placeholder="Digite o numero da mesa">
             </div>
-
+            <div id="whatsappId"  style="display: none; ">
+              <!-- <span>Receba notificação via whatsapp </span> -->
+            <div id="setPhone" class="mylabel" >
+              
+              <label style="height:48px;">  
+               
+                <img src="assets/images/inputs/whats.png" style="margin-top: 16px;">  
+              </label>
+              <input id="inputMesa"  type="number" placeholder="Whatsapp para notificação">
+            </div>
+          </div>
         </div>
         <div style="position: relative;">
             <label> 
@@ -318,60 +325,65 @@
       if(inpuMVaue!=0){
 
 
-        database.map((baseMap)=>{
-          if(baseMap.mesa==inpuMVaue){ //VERIFICA EXISTENCIA
- 
-                console.log("compras passadas")
-                console.log(baseMap.orders) 
-                baseMap.orders.map((mapOrders)=>{ 
-                  recebePedidos.push(mapOrders)  
-                })
-  
-          }
-
-        })
+              database.map((baseMap)=>{
+                if(baseMap.mesa==inpuMVaue){ //VERIFICA EXISTENCIA
       
-        console.log("Compra atual")
-        console.log(allordersBuy)
-
-        allordersBuy.map((atualOrderMap)=>{
-          recebePedidos.push(atualOrderMap)
-        })
-
-
-
-        console.log("Pedidos Recebidos")
-        console.log(recebePedidos)
-
-        db.collection('mesasOpen').doc(inpuMVaue).set({  
-          mesa:inpuMVaue,
-          orders:recebePedidos  //<==================Pedidos Recebidos
-        }) 
- 
-        prodsSelct=[]  
-        form.reset()
-        alert('Pedido Enviado ao Restaurante')  
+                      console.log("compras passadas")
+                      console.log(baseMap.orders) 
+                      baseMap.orders.map((mapOrders)=>{ 
+                        recebePedidos.push(mapOrders)  
+                      })
         
-        setTimeout(function(){
-            location.reload()
-        }, 2000);
+                }
 
-      }else{
+              })
+            
+              console.log("Compra atual")
+              console.log(allordersBuy)
 
+              allordersBuy.map((atualOrderMap)=>{
+                recebePedidos.push(atualOrderMap)
+              })
+
+
+
+              console.log("Pedidos Recebidos")
+              console.log(recebePedidos)
+
+              db.collection('mesasOpen').doc(inpuMVaue).set({  
+                mesa:inpuMVaue,
+                orders:recebePedidos  //<==================Pedidos Recebidos
+              }) 
+      
+              prodsSelct=[]  
+              form.reset()
+              alert('Pedido Enviado ao Restaurante')  
+              
+              setTimeout(function(){
+                  location.reload()
+              }, 2000);
+
+      }else if(inpuMWhats!="") {
+        
+        console.log(inpuMWhats)
+ 
         let userNameString=inputUserName.toLowerCase().replace(/\s/g, '+');
         db.collection('delivery').doc(userNameString).set({  
           "name":userNameString,
+           "whatsapp":inpuMWhats,
            orders:allordersBuy  //<==================Pedidos Recebidos
         }) 
 
-        alert('Pedido Enviado ao Restaurante')  
+        alert('Pedido Enviado ao Restaurante, acompanhe a notificação no seu whatsapp')  
         form.reset()
 
         setTimeout(function(){
-            location.reload()
+            // location.reload()
         }, 2000);
 
-      }
+      }else{
+        alert('Preecha o campo com seu Whatsapp valido.')
+      } 
         
 
 
@@ -379,16 +391,7 @@
  })
  
 
- //DELETE
-//  var btnDel=document.getElementById('deleteOrder')
  
-//  btnDel.addEventListener('click',function(e){
-//   db.collection("mesasOpen").doc("10s").delete().then(() => {
-//     console.log("Document successfully deleted!");
-// }).catch((error) => {
-//     console.error("Error removing document: ", error);
-// });
-//  })
  </script>
 
     
