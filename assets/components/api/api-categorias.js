@@ -686,16 +686,16 @@ data = [{
                 price:5,
                 quantidade:0, 
             },{
-                id:'3',
+                id:Math.floor(Math.random() * 1000),
                 key:'',
                 categoria:'bebidas',
                 
-                name:'H20 Limão', 
-                img:'assets/images/produtos/bebidah2o.png',  
+                name:'H2O Limão', 
+                img:'assets/images/produtos/bebidalimao.png',  
                 price:8,
                 quantidade:0, 
             },{
-                id:'5',
+                id:Math.floor(Math.random() * 1000),
                 key:'',
                 categoria:'bebidas',
                 
@@ -1301,7 +1301,8 @@ STATUSMESA=false
 
     
  addProd=(ProdThis, inputProd)=>{ 
-     
+    //  console.log(ProdThis)
+    //  console.log(inputProd)
     var key=ProdThis.getAttribute('key')
      
       input=document.getElementById(inputProd)
@@ -1311,8 +1312,11 @@ STATUSMESA=false
     data.map((apiData)=>{   
         apiData.itens.map((itensMap)=>{     
              itensMap.products.map((productsMap)=>{ 
+                // console.log(key)
+                console.log(productsMap)
         
-              if(productsMap.id===key ){
+              if(productsMap.id==key ){
+                console.log(productsMap.name)
                 productsMap.quantidade++
                 value=productsMap.quantidade 
                 input.setAttribute('value',value)
