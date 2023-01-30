@@ -1504,7 +1504,7 @@ closeCheckout=()=>{
 }
 
 
-
+    ///update
    
 
   tabcontent = document.getElementsByClassName("tabcontent");
