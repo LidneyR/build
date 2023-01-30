@@ -704,7 +704,7 @@ data = [{
                 price:7,
                 quantidade:0, 
             },{
-                id:'6',
+                id:Math.floor(Math.random() * 1000),
                 key:'',
                 categoria:'bebidas',
                 
