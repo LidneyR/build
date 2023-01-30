@@ -309,45 +309,45 @@
  form.addEventListener('submit', function(e){
    e.preventDefault()  
 
-      if(inpuMVaue!=0){
+      if(inpuMVaue!=0){ 
 
-
-              database.map((baseMap)=>{
-                if(baseMap.mesa==inpuMVaue){ //VERIFICA EXISTENCIA
-      
-                      console.log("compras passadas")
-                      console.log(baseMap.orders) 
+              databaseMesas.map((baseMap)=>{
+                if(baseMap.mesa==inpuMVaue){ //VERIFICA EXISTENCIA 
+            
                       baseMap.orders.map((mapOrders)=>{ 
-                        recebePedidos.push(mapOrders)  
-                      })
-        
-                }
+                        recebePedidos.push(mapOrders) 
+
+                      }) 
+                  }
 
               })
-            
-              console.log("Compra atual")
-              console.log(allordersBuy)
 
+            
+              
               allordersBuy.map((atualOrderMap)=>{
                 recebePedidos.push(atualOrderMap)
-              })
-
-
-
-              console.log("Pedidos Recebidos")
-              console.log(recebePedidos)
+              }) 
 
               db.collection('mesasOpen').doc(inpuMVaue).set({  
                 mesa:inpuMVaue,
                 orders:recebePedidos  //<==================Pedidos Recebidos
+              })
+
+              db.collection('notificacoes').doc(inpuMVaue).set({  
+                mesa:inpuMVaue,
+                orders:allordersBuy  //<==================Pedidos Recebidos
               }) 
       
               prodsSelct=[]  
               form.reset()
-              alert('Pedido Enviado ao Restaurante')  
+
+
+              // alert('Pedido Enviado ao Restaurante')  
+              // console.log('Pedido Enviado ao Restaurante',recebePedidos)  
+              // console.log('Notificação',allordersBuy)  
               
               setTimeout(function(){
-                  location.reload()
+                  // location.reload()
               }, 2000);
 
       }else if(inpuMWhats!="") {
@@ -441,6 +441,8 @@
     ordersLab.onSnapshot((snapshot) => {  
         snapshot.forEach((doc) => { 
           databaseMesas.push(doc.data())
+
+          // console.log(databaseMesas)
         }); 
     }, (error) => {
         // ...

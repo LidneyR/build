@@ -17,9 +17,7 @@ function openCity(evt, cityName, parent) {
 
       if(tablinks[i].getAttribute("key")){
         if (parent){
-          if(tablinks[i].getAttribute("key")==parent){
-          
-            console.log( tablinks[i])
+          if(tablinks[i].getAttribute("key")==parent){ 
             tablinks[i].setAttribute("class", "tablinks active")
           }
           
@@ -31,7 +29,7 @@ function openCity(evt, cityName, parent) {
     if (parent){
      
     document.getElementById(parent).style.display = "block";
-    console.log(getAttribute("key"))
+   
     }
 
       evt.currentTarget.className +=" active";
