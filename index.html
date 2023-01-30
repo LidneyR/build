@@ -239,6 +239,7 @@
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
  <script src="assets/js/all.js"></script>
+ <script src="assets/components/relogio/relogio.js"></script>
  <script src="assets/components/checkout/checkout.js"></script>
  <script src="assets/components/categorias/categorias.js"></script>
  
@@ -333,28 +334,25 @@
                 orders:recebePedidos  //<==================Pedidos Recebidos
               })
 
-              db.collection('notificacoes').doc(inpuMVaue).set({  
+              const horaAtual=relogio()
+              
+              db.collection('notificacoes').doc(horaAtual).set({  
                 mesa:inpuMVaue,
-                orders:allordersBuy  //<==================Pedidos Recebidos
+                orders:allordersBuy,  //<==================Pedidos Recebidos
+                hora:horaAtual
               }) 
+              alert('Pedido Enviado ao Restaurante')  
       
               prodsSelct=[]  
-              form.reset()
-
-
-              // alert('Pedido Enviado ao Restaurante')  
-              // console.log('Pedido Enviado ao Restaurante',recebePedidos)  
-              // console.log('Notificação',allordersBuy)  
-              
+              form.reset() 
               setTimeout(function(){
-                  // location.reload()
+                  location.reload()
               }, 2000);
 
       }else if(inpuMWhats!="") {
         
  
-        console.log(databaseDelivery.length>0)
-
+ 
         if(databaseDelivery.length>0){
 
              databaseDelivery.map((mapDataDelivery)=>{
@@ -363,8 +361,7 @@
 
 
                       if(validaName==true){
-                        console.log('Segunda Compra')
-                    
+                        // console.log('Segunda Compra') 
 
                           mapDataDelivery.orders.map((mapOrdersDelv)=>{ 
                             recebePedidos.push(mapOrdersDelv) 
@@ -384,14 +381,12 @@
                         
                           }) 
 
-                          console.log({"name":userNameString,
-                            "whatsapp":inpuMWhats,
-                            orders:recebePedidos  //<==================Pedidos Recebidos
-
-                    
-
-                          })
-
+                          alert('Pedido Enviado ao Restaurante')   
+       
+                          form.reset() 
+                          setTimeout(function(){
+                              location.reload()
+                          }, 2000);
                       }else{
                          
 
@@ -400,9 +395,9 @@
                   })
 
         }else{
-            console.log("novo") 
-
+            // console.log("novo")  
             console.log('Primeira Compra')
+
               let userNameString=inputUserName.toLowerCase().replace(/\s/g, '+');
               db.collection('delivery').doc(userNameString).set({  
                 "name":userNameString,
@@ -410,12 +405,15 @@
                 orders:allordersBuy  //<==================Pedidos Recebidos
               }) 
 
-              console.log({  
+              const horaAtual=relogio()
+              
+              db.collection('notificacoes').doc(horaAtual).set({  
                 "name":userNameString,
                 "whatsapp":inpuMWhats,
-                orders:allordersBuy  //<==================Pedidos Recebidos
-              })
-
+                orders:allordersBuy,  //<==================Pedidos Recebidos
+                hora:horaAtual
+              }) 
+            
               form.reset()
               alert('Pedido Enviado ao Restaurante')  
               
@@ -459,7 +457,7 @@
     });
 
  </script>
-
+ 
     
 </body>
 </html>

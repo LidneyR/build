@@ -66,8 +66,8 @@ window.onload=()=>{
     databaseDelivery=[] 
     recebePedidos=[]
 
-
-    
+    const date = new Date();
+    // console.log(date)
    
  
 }
