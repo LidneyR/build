@@ -11,6 +11,12 @@ relogio=()=>{
     return horaatual
 }
 
+a=1
+genarateID=()=>{
+    // console.log(a+=1)
+    return a+=1
+}
+
 //  setInterval(relogio(),500)
 
-//  setInterval(relogio, 500);
+//  setInterval(genarateID, 500);

@@ -513,6 +513,8 @@ data = [{
             name:'Panquecas',
             products:[{
                 id:'30',
+                categoria:'pasteis',
+
                 name:'Panqueca Carne', 
                 img:'assets/images/produtos/panquecacarne.png',  
 
@@ -521,6 +523,8 @@ data = [{
             },{
                 id:'31',
                 name:'Panqueca Queijo', 
+                categoria:'pasteis',
+
                 img:'assets/images/produtos/panquecaqueijo.png',  
 
                 price:16,
@@ -528,6 +532,8 @@ data = [{
             },{
                 id:'32',
                 name:'Panqueca Bauru', 
+                categoria:'pasteis',
+
                 img:'assets/images/produtos/panquecabauru.png',  
 
                 price:16,
@@ -535,12 +541,16 @@ data = [{
             },{
                 id:'33',
                 name:'Panqueca Frango', 
+                categoria:'pasteis',
+
                 img:'assets/images/produtos/panquecafrango.png',  
 
                 price:16,
                 quantidade:0,
             },{
                 id:'34',
+                categoria:'pasteis',
+
                 name:'Panqueca Pizza', 
                 img:'assets/images/produtos/panquecapizza.png',  
 
@@ -548,6 +558,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'35',
+                categoria:'pasteis',
+
                 name:'Panqueca Brócolis', 
                 img:'assets/images/produtos/panquecabrocolis.png',  
 
@@ -555,6 +567,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'37',
+                categoria:'pasteis',
+
                 name:'Panqueca Carne com Queijo', 
                 img:'assets/images/produtos/panquecacarnequeijo.png',  
 
@@ -562,6 +576,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'38',
+                categoria:'pasteis',
+
                 name:'Panqueca Brócolis com Queijo', 
                 img:'assets/images/produtos/panquecabrocolisqueijo.png',  
 
@@ -569,6 +585,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'39',
+                categoria:'pasteis',
+
                 name:'Panqueca Frango com Catupiry', 
                 img:'assets/images/produtos/panquecafrangocatupiry.png',  
 
@@ -576,6 +594,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'40',
+                categoria:'pasteis',
+
                 name:'Panqueca Palmito', 
                 img:'assets/images/produtos/panquecapalmito.png',  
 
@@ -583,6 +603,8 @@ data = [{
                 quantidade:0,
             },{
                 id:'41',
+                categoria:'pasteis',
+
                 name:'Panqueca Camarão', 
                 img:'assets/images/produtos/panquecacamarao.png',  
 
@@ -598,12 +620,16 @@ data = [{
                 id:'176',
                 name:'Pizza Mini Mussarela', 
                 img:'assets/images/produtos/minimussarela.png',  
+                categoria:'pasteis',
+
 
                 price:15,
                 quantidade:0,
             },{
                 id:'177',
                 name:'Pizza Mini Presunto e Queijo', 
+                categoria:'pasteis',
+
                 img:'assets/images/produtos/minipresuntomussarela.png',  
 
                 price:15,
@@ -611,6 +637,8 @@ data = [{
             },{
                 id:'178',
                 name:'Pizza Mini Calabresa', 
+                categoria:'pasteis',
+
                 img:'assets/images/produtos/minicalabresa.png',  
 
                 price:15,
@@ -618,6 +646,8 @@ data = [{
             },{
                 id:'179',
                 name:'Pizza Mini Brócolis', 
+                categoria:'pasteis',
+
                 img:'assets/images/produtos/minibrocolis.png',  
 
                 price:15,
@@ -863,12 +893,16 @@ data = [{
             name:'Caipirinhas', 
             products:[{
                 id:'140',
+                categoria:'bebidas',
+
                 name:'Caipirinha Pinga', 
                 img:'assets/images/produtos/caipirinhapinga.png',  
                 price:22, 
                 quantidade:0,
             },{
                 id:'141',
+                categoria:'bebidas',
+
                 name:'Caipirinha Vodka Orloff', 
                 img:'assets/images/produtos/caipirinhaorloff.png',  
                 price:26, 
@@ -876,6 +910,8 @@ data = [{
 
             },{
                 id:'142',
+                categoria:'bebidas',
+
                 name:'Caipirinha Vodka Smirnoff', 
                 img:'assets/images/produtos/caipirinhasmirnoff.png',  
                 price:28,
@@ -883,6 +919,8 @@ data = [{
 
             },{
                 id:'143',
+                categoria:'bebidas',
+
                 name:'Caipirinha Rum', 
                 img:'assets/images/produtos/caipirinharum.png',  
                 price:25,
@@ -890,6 +928,8 @@ data = [{
 
             },{
                 id:'145',
+                categoria:'bebidas',
+
                 name:'Caipirinha Cachaça', 
                 img:'assets/images/produtos/caipirinhacachaca.png',  
                 price:23,
@@ -897,6 +937,8 @@ data = [{
 
             },{
                 id:'146',
+                categoria:'bebidas',
+
                 name:'Caipirinha com Duas Frutas', 
                 img:'assets/images/produtos/caipirinhaduasfrutas.png',  
                 price:28,
@@ -904,6 +946,9 @@ data = [{
 
             },{
                 id:'147',
+                
+                categoria:'bebidas',
+
                 name:'Caipirinha com Pimenta', 
                 img:'assets/images/produtos/caipirinhapimenta.png',  
                 price:26,
@@ -911,6 +956,8 @@ data = [{
 
             },{
                 id:'149',
+                categoria:'bebidas',
+
                 name:'Caipirinha Saque', 
                 img:'assets/images/produtos/caipirinhasaque.png',  
                 price:22,
@@ -922,12 +969,16 @@ data = [{
             name:'Batidas', 
             products:[{
                 id:'185',
+                categoria:'bebidas',
+
                 name:'Batida Pinga', 
                 img:'assets/images/produtos/batidapinga.png',  
                 price:20, 
                 quantidade:0,
             },{
                 id:'107C',
+                categoria:'bebidas',
+
                 name:'Batida Cachaça', 
                 img:'assets/images/produtos/batidacachaca.png',  
                 price:23, 
@@ -935,6 +986,8 @@ data = [{
 
             },{
                 id:'186',
+                categoria:'bebidas',
+
                 name:'Batida Vodka Orloff', 
                 img:'assets/images/produtos/batidaorloff.png',  
                 price:25,
@@ -942,6 +995,8 @@ data = [{
 
             },{
                 id:'110',
+                categoria:'bebidas',
+
                 name:'Batida Vodka Smirnoff', 
                 img:'assets/images/produtos/batidasmirnoff.png',  
                 price:28,
@@ -949,6 +1004,8 @@ data = [{
 
             },{
                 id:'221',
+                categoria:'bebidas',
+
                 name:'Batida Espanhola', 
                 img:'assets/images/produtos/batidaespanhola.png',  
                 price:22,
@@ -960,12 +1017,16 @@ data = [{
             name:'Doses', 
             products:[{
                 id:'201',
+                categoria:'bebidas',
+
                 name:'Dose Pinga', 
                 img:'assets/images/produtos/dosepinga.png',  
                 price:5, 
                 quantidade:0,
             },{
                 id:'202',
+                categoria:'bebidas',
+
                 name:'Dose Ypioca', 
                 img:'assets/images/produtos/doseypioca.png',  
                 price:8, 
@@ -973,6 +1034,8 @@ data = [{
 
             },{
                 id:'203',
+                categoria:'bebidas',
+
                 name:'Dose Cinar', 
                 img:'assets/images/produtos/dosecinar.png',  
                 price:10,
@@ -980,6 +1043,8 @@ data = [{
 
             },{
                 id:'204',
+                categoria:'bebidas',
+
                 name:'Dose Cachaça', 
                 img:'assets/images/produtos/dosecachaca.png',  
                 price:8,
@@ -987,6 +1052,8 @@ data = [{
 
             },{
                 id:'205',
+                categoria:'bebidas',
+
                 name:'Dose Vodka Smirnoff / Orloff', 
                 img:'assets/images/produtos/dosevodka.png',  
                 price:14,
@@ -994,6 +1061,8 @@ data = [{
 
             },{
                 id:'206',
+                categoria:'bebidas',
+
                 name:'Dose Campare', 
                 img:'assets/images/produtos/dosecampare.png',  
                 price:18,
@@ -1001,6 +1070,8 @@ data = [{
 
             },{
                 id:'207',
+                categoria:'bebidas',
+
                 name:'Dose Martini', 
                 img:'assets/images/produtos/dosemartini.png',  
                 price:14,
@@ -1008,6 +1079,8 @@ data = [{
 
             },{
                 id:'208',
+                categoria:'bebidas',
+
                 name:'Dose Contine', 
                 img:'assets/images/produtos/dosecontine.png',  
                 price:14,
@@ -1015,6 +1088,8 @@ data = [{
 
             },{
                 id:'209',
+                categoria:'bebidas',
+
                 name:'Dose Jurupinga', 
                 img:'assets/images/produtos/dosejurupinga.png',  
                 price:12,
@@ -1022,6 +1097,8 @@ data = [{
 
             },{
                 id:'210',
+                categoria:'bebidas',
+
                 name:'Dose Conhaque', 
                 img:'assets/images/produtos/doseconhaque.png',  
                 price:8,
@@ -1029,6 +1106,8 @@ data = [{
 
             },{
                 id:'211',
+                categoria:'bebidas',
+
                 name:'Drink Cuba libre', 
                 img:'assets/images/produtos/dosecubralibre.png',  
                 price:20,
@@ -1036,6 +1115,8 @@ data = [{
 
             },{
                 id:'212',
+                categoria:'bebidas',
+
                 name:'Drink Gin Tônica', 
                 img:'assets/images/produtos/dosegintonica.png',  
                 price:20,
@@ -1043,6 +1124,8 @@ data = [{
 
             },{
                 id:'213',
+                categoria:'bebidas',
+
                 name:'Dose Rum', 
                 img:'assets/images/produtos/doserum.png',  
                 price:14,
@@ -1051,12 +1134,16 @@ data = [{
             },{
                 id:'214',
                 name:'Dose Gin', 
+                categoria:'bebidas',
+
                 img:'assets/images/produtos/dosegin.png',  
                 price:14,
                 quantidade:0, 
 
             },{
                 id:'224',
+                categoria:'bebidas',
+
                 name:'Drink Pina Colada', 
                 img:'assets/images/produtos/dosepinacolada.png',  
                 price:22,
@@ -1064,6 +1151,7 @@ data = [{
 
             },{
                 id:'227',
+                categoria:'bebidas', 
                 name:'Drink Canoa Beat', 
                 img:'assets/images/produtos/dosecanoasbeat.png',  
                 price:28,
@@ -1071,6 +1159,8 @@ data = [{
 
             },{
                 id:'241',
+                categoria:'bebidas',
+
                 name:'Dose Whisky Passport', 
                 img:'assets/images/produtos/dosepassport.png',  
                 price:18,
@@ -1146,7 +1236,7 @@ STATUSMESA=false
            
           innitProd=tabContentMap.products.map((productsMap)=>{  
             prods+=productsMap
- 
+                    // console.log(productsMap.id)
                     Contentsubs.innerHTML+= `  
                         <div class="produto">
                                 <img src="`+productsMap.img +`" alt="" ></img>
