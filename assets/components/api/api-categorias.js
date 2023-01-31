@@ -1279,12 +1279,12 @@ STATUSMESA=false
              itensMap.products.map((productsMap)=>{ 
               
 
-              if(productsMap.id===key && productsMap.quantidade>0){
+              if(productsMap.id==key && productsMap.quantidade>0){
 
          
                 productsMap.quantidade-- 
                 value=productsMap.quantidade 
-                input.setAttribute('value',value)
+                input.setAttribute('value',value)   
                 refrashCart(inputProd)
 
               }

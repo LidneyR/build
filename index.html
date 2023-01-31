@@ -357,44 +357,45 @@
  
         if(databaseDelivery.length>0){
 
-             databaseDelivery.map((mapDataDelivery)=>{
-                  
-                  let validaName=mapDataDelivery.name===inputUserName.toLowerCase()
-
-
-                      if(validaName==true){
-                        // console.log('Segunda Compra') 
-
+             databaseDelivery.map((mapDataDelivery)=>{ 
+                  let validaName=mapDataDelivery.name===inputUserName.toLowerCase() 
+                      
+                      if(validaName==true){ 
                           mapDataDelivery.orders.map((mapOrdersDelv)=>{ 
                             recebePedidos.push(mapOrdersDelv) 
-                          })
-                          
-                          allordersBuy.map((atualOrderMap)=>{
-                              recebePedidos.push(atualOrderMap)
-                          })
+                          }) 
+                      } 
+ 
+                  })
 
+                      allordersBuy.map((atualOrderMap)=>{
+                            recebePedidos.push(atualOrderMap)
+                      })
 
-                          let userNameString=inputUserName.toLowerCase().replace(/\s/g, '+');
+                      let userNameString=inputUserName.toLowerCase().replace(/\s/g, '+');
                           db.collection('delivery').doc(userNameString).set({  
                             "name":userNameString,
                             "whatsapp":inpuMWhats,
                             orders:recebePedidos  //<==================Pedidos Recebidos
+                      }) 
 
-                        
-                          }) 
-
-                          alert('Pedido Enviado ao Restaurante')   
-       
-                          form.reset() 
-                          setTimeout(function(){
-                              location.reload()
-                          }, 2000);
-                      }else{
+                      const horaAtual=relogio()
                          
+                      db.collection('notificacoes').doc(horaAtual).set({  
+                            "name":userNameString,
+                            "whatsapp":inpuMWhats,
+                            orders:allordersBuy,  //<==================Pedidos Recebidos
+                            hora:horaAtual
 
-                      } 
+                      }) 
+                      allordersBuy=[]
+                      alert('Pedido Enviado ao Restaurante')   
+    
+                      form.reset() 
+                      setTimeout(function(){
+                          // location.reload()
+                      }, 2000);
 
-                  })
 
         }else{
             // console.log("novo")  
@@ -420,7 +421,7 @@
               form.reset()
              
               setTimeout(function(){
-                  location.reload()
+                  // location.reload()
               }, 1000);
 
         }

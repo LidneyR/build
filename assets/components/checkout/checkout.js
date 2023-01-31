@@ -46,7 +46,7 @@ formaRetirada=()=>{
 
     //Mesa Digitada
     setMesa.addEventListener('focusout', function(e){
-  
+        
         inpuMVaue=document.getElementById('inputMesa').value.toString()  
           
     })
@@ -54,6 +54,7 @@ formaRetirada=()=>{
     //whats Digitado
     whatsappId.addEventListener('focusout', function(e){
         console.log(e.target.value)
+        
         inpuMWhats=e.target.value.toString()  
           
     })
