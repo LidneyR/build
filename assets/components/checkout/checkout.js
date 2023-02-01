@@ -53,9 +53,7 @@ formaRetirada=()=>{
 
     //whats Digitado
     whatsappId.addEventListener('focusout', function(e){
-        console.log(e.target.value)
-        
-        inpuMWhats=e.target.value.toString()  
+              inpuMWhats=e.target.value.toString()  
           
     })
 }

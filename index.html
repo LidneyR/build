@@ -330,14 +330,14 @@
               }) 
 
               db.collection('mesasOpen').doc(inpuMVaue).set({  
-                mesa:inpuMVaue,
+                mesa:parseInt(inpuMVaue),
                 orders:recebePedidos  //<==================Pedidos Recebidos
               })
 
               const horaAtual=relogio()
               
               db.collection('notificacoes').doc(horaAtual).set({  
-                mesa:inpuMVaue,
+                mesa:parseInt(inpuMVaue),
                 orders:allordersBuy,  //<==================Pedidos Recebidos
                 hora:horaAtual
               }) 
@@ -393,13 +393,13 @@
     
                       form.reset() 
                       setTimeout(function(){
-                          // location.reload()
+                          location.reload()
                       }, 2000);
 
 
         }else{
             // console.log("novo")  
-            console.log('Primeira Compra')
+            // console.log('Primeira Compra')
 
               let userNameString=inputUserName.toLowerCase().replace(/\s/g, '+');
               db.collection('delivery').doc(userNameString).set({  
@@ -425,14 +425,9 @@
               }, 1000);
 
         }
-   
-
-  
-      
-
+     
       } 
-
-  
+ 
  })
  
 
@@ -442,8 +437,7 @@
     ordersLab.onSnapshot((snapshot) => {  
         snapshot.forEach((doc) => { 
           databaseMesas.push(doc.data())
-
-          // console.log(databaseMesas)
+ 
         }); 
     }, (error) => {
         // ...
