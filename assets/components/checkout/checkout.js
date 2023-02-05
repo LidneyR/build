@@ -52,11 +52,8 @@ formaRetirada=()=>{
     }
 
     //Mesa Digitada
-    setMesa.addEventListener('focusout', function(e){
-        
-        inpuMVaue=document.getElementById('inputMesa').value.toString()  
-        // console.log(databaseMesas)
-          
+    setMesa.addEventListener('focusout', function(e){ 
+        inpuMVaue=document.getElementById('inputMesa').value.toString()   
     })
 
     //whats Digitado
