@@ -6,15 +6,12 @@ relogio=()=>{
     let ms=String(data.getSeconds()).padStart(2, '0')
 
     let horaatual=hr+":"+mn+":"+ms
-    console.log(horaatual)
 
-    // console.log(horaatual)
     return horaatual
 }
 
 a=1
-genarateID=()=>{
-    // console.log(a+=1)
+genarateID=()=>{ 
     return a+=1
 }
  
