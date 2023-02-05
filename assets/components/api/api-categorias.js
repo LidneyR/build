@@ -291,7 +291,7 @@ data = [{
                 price:15,
                 quantidade:0,
             },{
-                id:'104',
+                id:Math.floor(Math.random() * 1000),
                 categoria:'pasteis',
                 name:'Pastel Chocolate ou Nutella', 
                 img:'assets/images/produtos/pastelchocolatenutella.png',  
@@ -372,7 +372,7 @@ data = [{
                 price:16,
                 quantidade:0,
             },{
-                id:'63',
+                id:Math.floor(Math.random() * 1000),
                 categoria:'tapiocas',
                 
                 name:'Tapioca Frango', 
