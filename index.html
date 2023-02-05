@@ -282,7 +282,8 @@
  let horaAtual=relogio()
  let horaReplace=horaAtual.replace(/[^0-9]/g, '')
  let databaseDeliveryArr=[]
-
+ let databaseMesas=[] 
+ 
  //UPDATE
  form.addEventListener('submit', function(e){
    e.preventDefault()  
@@ -291,7 +292,7 @@
 
               databaseMesas.map((baseMap)=>{
                 if(baseMap.mesa==inpuMVaue){ //VERIFICA EXISTENCIA 
-            
+                      console.log(baseMap)
                       baseMap.orders.map((mapOrders)=>{ 
                           recebePedidos.push(mapOrders) 
                       }) 
@@ -409,7 +410,7 @@
  //READ MESAS
     const ordersLab=db.collection('mesasOpen') 
     ordersLab.onSnapshot((snapshot) => {  
-      let databaseMesas=[]
+      // let databaseMesas=[]
         snapshot.forEach((doc) => { 
           databaseMesas.push(doc.data())
  

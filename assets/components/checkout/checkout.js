@@ -55,7 +55,7 @@ formaRetirada=()=>{
     setMesa.addEventListener('focusout', function(e){
         
         inpuMVaue=document.getElementById('inputMesa').value.toString()  
-        console.log(databaseMesas)
+        // console.log(databaseMesas)
           
     })
 
@@ -69,9 +69,9 @@ formaRetirada=()=>{
 
 window.onload=()=>{
     
-    databaseMesas=[] 
     ordersLabDeliveryArr=[] 
     recebePedidos=[]
+
 
     const date = new Date();
     // console.log(date)
