@@ -285,7 +285,12 @@
                 orders:recebePedidos  //<==================Pedidos Recebidos
               })
 
-
+              db.collection('notificacoes').doc(horaReplace).set({  
+                mesa:parseInt(inpuMVaue),
+                orders:allordersBuy,  //<==================Pedidos Recebidos
+                hora:horaAtual
+              }) 
+         
 
               setTimeout(function(){
                   // location.reload()
@@ -330,7 +335,8 @@
 
                 }else{
                   alert('Enviando novamente')
-                  form.submit()
+                  // form.submit()
+                  btnSubmit.click();
                 }
               
 
