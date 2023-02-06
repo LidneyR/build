@@ -400,22 +400,33 @@
                             hora:horaAtual
 
                       }) 
-                      allordersBuy=[]
-                      alert('Pedido Enviado ao Restaurante')   
-    
-                   
-                      setTimeout(function(){
-                        databaseDeliveryArr.map((mapDataDelivery)=>{ 
-                        let validaName=mapDataDelivery.name===inputUserName.toLowerCase() 
+                      // allordersBuy=[]
+                        
+                    
+                      setTimeout(function(){ 
+                        databaseDeliveryArr.map((delverymap)=>{ 
+                          delverymap.orders.map((mapOrdersDelivery)=>{ 
                             
-                            if(validaName==true){ 
-                                mapDataDelivery.orders.map((mapOrdersDelv)=>{ 
-                                  recebePedidos.push(mapOrdersDelv) 
-                                }) 
-                            } 
-      
+
+                            allordersBuy.map((atuaIdOrder)=>{
+                              console.log("ID banco",mapOrdersDelivery.idPedido)
+
+                              console.log("atualID",atuaIdOrder)
+
+                              if(atuaIdOrder.idPedido===mapOrdersDelivery.idPedido){
+                                alert('Seu pedido foi entregue ao restaurante')
+                              }
+
+                            }) 
+                          })
                         })
                       }, 2000);
+                   
+                    
+
+                      
+                     
+
 
 
         }else{
@@ -423,6 +434,7 @@
             // console.log('Primeira Compra')
 
               let userNameString=inputUserName.toLowerCase().replace(/\s/g, '+');
+             
               db.collection('delivery').doc(userNameString).set({  
                 "name":userNameString,
                 "whatsapp":inpuMWhats,
@@ -436,14 +448,28 @@
                 "whatsapp":inpuMWhats,
                 orders:allordersBuy,  //<==================Pedidos Recebidos
                 hora:horaAtual
-              }) 
-              alert('Pedido Enviado ao Restaurante')  
+              })  
             
-              form.reset()
              
-              setTimeout(function(){
-                  location.reload()
+              setTimeout(function(){ 
+                databaseDeliveryArr.map((delverymap)=>{ 
+                  delverymap.orders.map((mapOrdersDelivery)=>{ 
+                    
+
+                    allordersBuy.map((atuaIdOrder)=>{
+                      console.log("ID banco",mapOrdersDelivery.idPedido)
+
+                      console.log("atualID",atuaIdOrder)
+
+                      if(atuaIdOrder.idPedido===mapOrdersDelivery.idPedido){
+                        alert('Seu pedido foi entregue ao restaurante')
+                      }
+
+                    }) 
+                  })
+                })
               }, 2000);
+
 
         }
      
@@ -451,7 +477,7 @@
  
  })
  
-
+ 
  
  //READ MESAS
     const ordersLab=db.collection('mesasOpen') 
