@@ -305,7 +305,7 @@
                               idspedidosRecebidos.map((recebidosMap)=>{
                                 // console.log('idAtual',recebidosMap)
                             
-                                if('boolean',recebidosMap==mapIdAtual){
+                                if(recebidosMap==mapIdAtual){
                                    entregaPed=true
 
                                 }else{
@@ -328,7 +328,7 @@
 
 
                 if(entregaPed==true){
-                  alert('Pedido enviado')
+                  alert('O restaurante recebeu seu pedido, aguarde!')
                   form.reset() 
                   location.reload()
 
@@ -402,9 +402,18 @@
                       allordersBuy=[]
                       alert('Pedido Enviado ao Restaurante')   
     
-                      form.reset()  
+                   
                       setTimeout(function(){
-                          location.reload()
+                        databaseDeliveryArr.map((mapDataDelivery)=>{ 
+                        let validaName=mapDataDelivery.name===inputUserName.toLowerCase() 
+                            
+                            if(validaName==true){ 
+                                mapDataDelivery.orders.map((mapOrdersDelv)=>{ 
+                                  recebePedidos.push(mapOrdersDelv) 
+                                }) 
+                            } 
+      
+                        })
                       }, 2000);
 
 
