@@ -1464,11 +1464,11 @@ STATUSMESA=false
         `; 
 
         totalfinesh.innerHTML+=`
-        <div class="total" id="fineshPay"> 
+        <div class="total" id="fineshPay" style=" z-index: 99;"> 
             Total da compra
             `+totalCart.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) +` 
 
-            <span id="clickpague" style="display:none;" onclick="animatedCheckOut()">clique e pague</span>
+            <span id="clickpague"   onclick="animatedCheckOut()">clique e pague</span>
             
             <div id="rrcode" style="
             background: white;

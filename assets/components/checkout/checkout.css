@@ -92,4 +92,9 @@ div#rrcode {
     justify-content: center;
     align-items: center;
     margin: 25px auto !important;
+    
+}
+
+#clickpague{
+    display: none;
 }
