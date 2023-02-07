@@ -1,9 +1,10 @@
 formcheckout=document.getElementById('checkoutform')
-itensTotal=document.getElementById("totalfinesh")
+totalfinesh=document.getElementById("totalfinesh")
+// itensTotal=document.getElementById("totalfinesh")
 inpuMMesa=document.getElementById('inputMesa')
 whatsappId=document.getElementById('whatsappId')
 inpuMWhats=""
-
+console.log(totalfinesh)
 function showNumber(){
 
     var n=100;
@@ -28,10 +29,14 @@ getCheckout=()=>{
 
     // VALIDA CAMPO CHECKOUT 
     if(optionsCheck=="Mesa"){ 
-        mesaCheck.parentNode.style.cssText="display:flex"
+        mesaCheck.parentNode.style.cssText="display:flex"   
 
     }
     containerCheckout.style.cssText="display:block"
+
+
+
+    
 }
 
 
@@ -39,15 +44,18 @@ formaRetirada=()=>{
        
     retiradavalue=document.getElementById('selectCheckout').value
     setMesa=document.getElementById('setMesa') 
-
+    clickpague=document.getElementById('clickpague')
     if(retiradavalue=='mesa'){
         setMesa.style.cssText="display:flex"   
         whatsappId.style.cssText="display:none"  
+        clickpague.style.cssText="display:none"  
 
     }else if(retiradavalue=='balcao'){
 
         setMesa.style.cssText="display:none"  
         whatsappId.style.cssText="display:block"  
+        clickpague.style.cssText="display:block"  
+    console.log(clickpague)
         inpuMVaue=0
     }
 

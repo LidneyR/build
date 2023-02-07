@@ -1462,6 +1462,29 @@ STATUSMESA=false
                 <button onclick="getCheckout()">FINALIZAR PEDIDO <i class="fa-regular fa-rectangle-list"></i></button> 
             </div> 
         `; 
+
+        totalfinesh.innerHTML+=`
+        <div class="total" id="fineshPay"> 
+            Total da compra
+            `+totalCart.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) +` 
+
+            <span id="clickpague" style="display:none;" onclick="animatedCheckOut()">clique e pague</span>
+            
+            <div id="rrcode" style="
+            background: white;
+            padding: 0 7px 6px; display:none;
+        ">
+                <img  style="
+                position: relative;
+                width: 195px;
+                left:0;
+            " src="https://lidneyr.github.io/adm/assets/components/impressao/andd.png"> 
+
+            Pague com QR CODE
+            </div>
+             <button type="submit" id="submitCheck">ENVIAR MEU PEDIDO </button>
+        </div> 
+        `;
   }
 
 

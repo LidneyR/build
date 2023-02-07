@@ -64,7 +64,7 @@ form img {
     position: absolute;
     z-index: 99;
     width: 14px;
-    left: 18px;
+    left: 18px;z-index: 0;
     
 }select:invalid { color: red; }
 .validation button {
