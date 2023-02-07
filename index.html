@@ -288,6 +288,7 @@
               db.collection('notificacoes').doc(horaReplace).set({  
                 mesa:parseInt(inpuMVaue),
                 orders:allordersBuy,  //<==================Pedidos Recebidos
+                "key":horaReplace,
                 hora:horaAtual
               }) 
          
@@ -396,6 +397,8 @@
                       db.collection('notificacoes').doc(horaReplace).set({  
                             "name":userNameString,
                             "whatsapp":inpuMWhats,
+                            "key":horaReplace,
+
                             orders:allordersBuy,  //<==================Pedidos Recebidos
                             hora:horaAtual
 
@@ -446,6 +449,7 @@
               db.collection('notificacoes').doc(horaReplace).set({  
                 "name":userNameString,
                 "whatsapp":inpuMWhats,
+                "key":horaReplace,
                 orders:allordersBuy,  //<==================Pedidos Recebidos
                 hora:horaAtual
               })  
