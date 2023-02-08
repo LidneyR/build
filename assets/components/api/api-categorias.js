@@ -1480,8 +1480,15 @@ STATUSMESA=false
                 left:0;
             " src="https://lidneyr.github.io/adm/assets/components/impressao/andd.png"> 
 
-            Pague com QR CODE
-            </div>
+           <span > Pague com QR CODE </span>
+        <span style="
+        text-align: center;
+        display: inline-flex;
+        margin: 20px auto;
+        font-weight: 300;
+    ">CHAVE </br>  12996218661 </span>
+           </div>
+        
              <button type="submit" id="submitCheck">ENVIAR MEU PEDIDO </button>
         </div> 
         `;

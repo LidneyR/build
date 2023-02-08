@@ -84,7 +84,7 @@ form#checkoutform .mylabel label {
 div#rrcode {
     background: white;
     border-radius: 10px;
-    height: 240px;
+    height: auto;
     padding: 0 3px;
     flex-direction: column !important;
  
