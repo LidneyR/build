@@ -3,8 +3,7 @@ totalfinesh=document.getElementById("totalfinesh")
 // itensTotal=document.getElementById("totalfinesh")
 inpuMMesa=document.getElementById('inputMesa')
 whatsappId=document.getElementById('whatsappId')
-inpuMWhats=""
-console.log(totalfinesh)
+inpuMWhats="" 
 function showNumber(){
 
     var n=100;
@@ -12,15 +11,31 @@ function showNumber(){
   
 }
 getCheckout=()=>{ 
+console.log(allordersBuy) 
+console.log()
+
     select=document.getElementById('selectValidate')
     text = select.options[select.selectedIndex].text;
     containerCheckout=document.getElementById('checkout')
     containerCheckout.setAttribute("class", "checkout") 
     selectCheck=document.getElementById('selectCheckout')
     optionsCheck=selectCheck.options[selectCheck.selectedIndex].text
+    observacaoPedido='Nenhuma observação'
     retiradavalue=0
 
 
+    
+
+    areaObs.addEventListener('change', function(event){
+        console.log(event.target.value)
+        observacaoPedido=event.target.value
+        obsData={'observacaoPedido':observacaoPedido}
+    
+        prodsSelct.push(obsData) 
+
+
+    })
+ 
     // VALIDA CAMPO HOME
     if(text=="Mesa"){
         mesaCheck=document.getElementById('selectMesaCheckout')
@@ -33,6 +48,7 @@ getCheckout=()=>{
 
     }
     containerCheckout.style.cssText="display:block"
+
 
 
 
