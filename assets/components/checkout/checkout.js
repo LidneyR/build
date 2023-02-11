@@ -11,8 +11,7 @@ function showNumber(){
   
 }
 getCheckout=()=>{ 
-console.log(allordersBuy) 
-console.log()
+ 
 
     select=document.getElementById('selectValidate')
     text = select.options[select.selectedIndex].text;
@@ -71,7 +70,7 @@ formaRetirada=()=>{
         setMesa.style.cssText="display:none"  
         whatsappId.style.cssText="display:block"  
         clickpague.style.cssText="display:block"  
-    console.log(clickpague)
+ 
         inpuMVaue=0
     }
 

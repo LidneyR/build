@@ -259,8 +259,11 @@
 
       if(inpuMVaue!=0){ 
 
+            let intMesaValue=String(parseInt(inpuMVaue))
+            console.log(intMesaValue)
+
               databaseMesas.map((baseMap)=>{ 
-                if(baseMap.mesa==inpuMVaue){ //VERIFICA EXISTENCIA  
+                if(baseMap.mesa==intMesaValue){ //VERIFICA EXISTENCIA  
                       baseMap.orders.map((mapOrders)=>{ 
                           recebePedidos.push(mapOrders) 
                           // console.log(mapOrders.idPedido) //id pedidos entregues
@@ -276,18 +279,18 @@
                 console.log(atualOrderMap.idPedido) //id pedido Atual
                 pedidoAtual.push(atualOrderMap.idPedido) 
 
-              })  
+              })    
 
-
+              // inpuMVaue.
 
               
-              db.collection('mesasOpen').doc(inpuMVaue).set({  
-                mesa:parseInt(inpuMVaue),
+              db.collection('mesasOpen').doc(intMesaValue).set({  
+                mesa:intMesaValue,
                 orders:recebePedidos  //<==================Pedidos Recebidos
               })
 
               db.collection('notificacoes').doc(horaReplace).set({  
-                mesa:parseInt(inpuMVaue),
+                mesa:intMesaValue,
                 orders:allordersBuy,  //<==================Pedidos Recebidos
                 "key":horaReplace,
                 hora:horaAtual
@@ -298,7 +301,7 @@
                   // location.reload()
               
                  databaseMesas.map((baseMap)=>{ 
-                 if(baseMap.mesa==inpuMVaue){ //VERIFICA EXISTENCIA  
+                 if(baseMap.mesa==intMesaValue){ //VERIFICA EXISTENCIA  
                         baseMap.orders.map((mapOrders)=>{ 
                             idspedidosRecebidos.push(mapOrders.idPedido) 
                            
